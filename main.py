@@ -1,5 +1,6 @@
 print( "hi this was me")
 from typing import Final
+from itertools import zip_longest
 # int
 age: int = 30
 quentity:int = 50
@@ -157,6 +158,8 @@ user.clear()
 for key,value in user.items():
    print(value)
 
+   numbers.discard(100)  # No error if 100 doesn't exist
+
 # user.clear()
 
 
@@ -255,3 +258,79 @@ print(categories)
 product_ids = {product["id"] for product in products}
 
 print(105 in product_ids)
+
+# Conditions and loops Use if/elif/else, for and while. Practice break, continue, enumerate and zip with real data.
+
+
+ager = 25
+is_active = True
+
+if ager <= 25:
+   print("you are elligiable")
+else:
+    print("You are not eligible")
+
+    markes:int = 85
+
+    if markes>=90:
+       print("you get golden A+")
+    elif markes>=80:
+       print("you get A+")
+    else :
+       print("sorry for failed")
+
+if age >= 18 and is_active:
+    print("User can access the system")
+
+if  not is_active:
+    print("Account is inactive")
+
+
+for i in range(5):
+    print(i)
+
+range(1, 6)       # 1, 2, 3, 4, 5
+range(2, 11, 2)   # 2, 4, 6, 8, 10
+
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+
+# get unique numbers
+numbersNew = [10, 20, 30, 20, 10, 40, 50]
+
+unique_numbers = list(dict.fromkeys(numbersNew))
+
+print(unique_numbers)
+
+studentsNew = ["Rahim", "Karim", "Sajib", "Hasan"]
+for student in studentsNew:
+    print(student)
+
+
+for i in range(len(students)):
+    print(i, students[i])
+
+for index, student in enumerate(students):
+    print(index, student)
+
+for index, student in enumerate(students, start=1):
+    print(index, student)
+
+    names = ["Rahim", "Karim", "Sajib"]
+
+marks = [80, 75, 90]
+
+for name, mark in zip(names, marks):
+    print(name, mark)
+
+    student_records = dict(zip(names, marks))
+
+print(student_records)
+
+
+result = list(zip_longest(names, marks, fillvalue="N/A"))
+
+print(result)
