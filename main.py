@@ -2,6 +2,8 @@
 from typing import Final
 from itertools import zip_longest
 from pathlib import Path
+import json
+import csv
 # import copy
 # # int
 # age: int = 30
@@ -676,30 +678,160 @@ numbers = [1, 2, 3, 4, 5]
 
 BASE_DIR = Path(__file__).resolve().parent
 
-file_path = BASE_DIR / "data" / "user.txt"
+# file_path = BASE_DIR / "data" / "user.txt"
 
-file_path.parent.mkdir(exist_ok=True,parents=True)
-with file_path.open("w", encoding="utf-8") as file:
-    file.write("Name: Sajib\n")
-    file.write("Age: 30\n")
-    file.write("Country: Bangladesh\n")
+# file_path.parent.mkdir(exist_ok=True,parents=True)
+# with file_path.open("w", encoding="utf-8") as file:
+#     file.write("Name: Sajib\n")
+#     file.write("Age: 30\n")
+#     file.write("Country: Bangladesh\n")
 
-# The write block has ended, so the file is closed and saved
+# # The write block has ended, so the file is closed and saved
 
-print(file_path)
-
-
+# print(file_path)
 
 
-with file_path.open("a", encoding="utf-8") as file:
-    file.write("City: Comilla\n")
-    # lines = file.readlines()
+
+
+# with file_path.open("a", encoding="utf-8") as file:
+#     file.write("City: Comilla\n")
+#     # lines = file.readlines()
     
-    # print(lines)
+#     # print(lines)
 
 
-with file_path.open("r", encoding="utf-8") as file:
-    content = file.read()
+# with file_path.open("r", encoding="utf-8") as file:
+#     content = file.read()
    
 
-print(content)
+# print(content)
+
+# user = {
+#     "id": 101,
+#     "name": "Sajib",
+#     "age": 30,
+#     "country": "Bangladesh"
+# }
+
+
+# with file_path.open("w", encoding="utf-8") as file:
+#     json.dump(user, file, indent=4)
+#     try:
+#         with file_path.open("r", encoding="utf-8") as file:
+#             user = json.load(file)
+#     except FileNotFoundError:
+#          print("Users file does not exist.")
+#     except PermissionError:
+#         print("You don't have permission to read this file.")
+
+# print(user)
+# print(user["name"])
+# print(user["age"])
+
+
+# try:
+#     # Your code
+#     number = int(input("Enter number: "))
+#     result = 100 / number
+
+# except Exception as error:
+#     print("Exception:", type(error).__name__)
+#     print("Message:", error)
+
+# JSON, CSV and dates Parse API-style JSON, read CSV, work with datetime and timezone-aware timestamps.
+
+# {
+#     "id": 101,
+#     "name": "Sajib",
+#     "age": 30,
+#     "is_active": true,
+#     "skills": ["Python", "Go", "Flutter"]
+# }
+
+
+
+response = '''
+{
+    "id": 101,
+    "name": "Sajib",
+    "age": 30,
+    "is_active": true
+}
+'''
+
+
+# response = requests.get(url).text
+# user = json.loads(response)
+
+
+# print(repr(response))
+# user = json.loads(response)
+
+
+# print(user)
+# print(user["name"])
+# print(user["age"])
+
+
+
+# user = {
+#     "id": 101,
+#     "name": "Sajib",
+#     "age": 30,
+#     "is_active": True
+# }
+
+# response = json.dumps(user)
+
+# print(response)
+
+
+
+
+# response = '''
+# {
+#     "success": true,
+#     "data": [
+#         {
+#             "id": 1,
+#             "name": "Rahim",
+#             "age": 25
+#         },
+#         {
+#             "id": 2,
+#             "name": "Sajib",
+#             "age": 30
+#         }
+#     ],
+#     "message": "Users retrieved successfully"
+# }
+# '''
+
+# result = json.loads(response)
+
+# for user in result["data"]:
+#     print(user["id"], user["name"], user["age"])
+users = [
+    ["id", "name", "age"],
+    [1, "Sajib", 30],
+    [2, "Rahim", 25],
+    [3, "Karim", 28]
+]
+file_path = BASE_DIR /"json" /"json.csv"
+file_path.parent.mkdir(exist_ok=True,parents=True)
+
+headers = users[0]
+rows = [dict(zip(headers, row)) for row in users[1:]]
+
+with file_path.open("w", encoding="utf-8", newline="") as file:
+   # writer = csv.writer(file)
+   # writer.writerows(users)
+   writer = csv.DictWriter(file, fieldnames=headers)
+   writer.writeheader()
+   writer.writerows(rows)
+
+with file_path.open("r", encoding="utf-8", newline="") as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        print(row)

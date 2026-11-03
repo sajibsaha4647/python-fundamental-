@@ -1,4 +1,6 @@
-Name: Sajib
-Age: 30
-Country: Bangladesh
-City: Comilla
+{
+    "id": 101,
+    "name": "Sajib",
+    "age": 30,
+    "country": "Bangladesh"
+}
