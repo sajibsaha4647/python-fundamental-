@@ -1,4 +1,5 @@
 # print( "hi this was me")
+from datetime import date, datetime
 from typing import Final
 from itertools import zip_longest
 from pathlib import Path
@@ -811,27 +812,34 @@ response = '''
 
 # for user in result["data"]:
 #     print(user["id"], user["name"], user["age"])
-users = [
-    ["id", "name", "age"],
-    [1, "Sajib", 30],
-    [2, "Rahim", 25],
-    [3, "Karim", 28]
-]
-file_path = BASE_DIR /"json" /"json.csv"
-file_path.parent.mkdir(exist_ok=True,parents=True)
+# users = [
+#     ["id", "name", "age"],
+#     [1, "Sajib", 30],
+#     [2, "Rahim", 25],
+#     [3, "Karim", 28]
+# ]
+# file_path = BASE_DIR /"json" /"json.csv"
+# file_path.parent.mkdir(exist_ok=True,parents=True)
 
-headers = users[0]
-rows = [dict(zip(headers, row)) for row in users[1:]]
+# headers = users[0]
+# rows = [dict(zip(headers, row)) for row in users[1:]]
 
-with file_path.open("w", encoding="utf-8", newline="") as file:
-   # writer = csv.writer(file)
-   # writer.writerows(users)
-   writer = csv.DictWriter(file, fieldnames=headers)
-   writer.writeheader()
-   writer.writerows(rows)
+# with file_path.open("w", encoding="utf-8", newline="") as file:
+#    # writer = csv.writer(file)
+#    # writer.writerows(users)
+#    writer = csv.DictWriter(file, fieldnames=headers)
+#    writer.writeheader()
+#    writer.writerows(rows)
 
-with file_path.open("r", encoding="utf-8", newline="") as file:
-    reader = csv.reader(file)
+# with file_path.open("r", encoding="utf-8", newline="") as file:
+#     reader = csv.reader(file)
 
-    for row in reader:
-        print(row)
+#     for row in reader:
+#         print(row)
+
+
+currentDate = date.today()
+# currentDateTime = datetime.now()
+currentDateTime = datetime.strptime()
+print(currentDate)
+print(currentDateTime)
