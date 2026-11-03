@@ -840,6 +840,14 @@ response = '''
 
 currentDate = date.today()
 # currentDateTime = datetime.now()
-currentDateTime = datetime.strptime()
+currentDateTime = datetime.strptime("2026-11-03 14:30", "%Y-%m-%d %H:%M")
 print(currentDate)
 print(currentDateTime)
+
+def main():
+    # Core logic, command-line arguments, or execution steps go here
+    print("Program is running successfully.")
+
+
+if __name__ == "__main__":
+ main()
