@@ -5,6 +5,7 @@ from itertools import zip_longest
 from pathlib import Path
 import json
 import csv
+from modules import add, subtract, getuser, Student, Child, Printer
 # import copy
 # # int
 # age: int = 30
@@ -838,11 +839,11 @@ response = '''
 #         print(row)
 
 
-currentDate = date.today()
-# currentDateTime = datetime.now()
-currentDateTime = datetime.strptime("2026-11-03 14:30", "%Y-%m-%d %H:%M")
-print(currentDate)
-print(currentDateTime)
+# currentDate = date.today()
+# # currentDateTime = datetime.now()
+# currentDateTime = datetime.strptime("2026-11-03 14:30", "%Y-%m-%d %H:%M")
+# print(currentDate)
+# print(currentDateTime)
 
 def main():
     # Core logic, command-line arguments, or execution steps go here
@@ -851,3 +852,28 @@ def main():
 
 if __name__ == "__main__":
  main()
+#  student = Student("Sajib",25,2030)
+#  student2 = Student("Sajib 123",25,2030)
+
+#  student.age = 400
+#  student.years = 20200
+
+#  print(student.name)
+#  print(student.age)
+#  print(student.years)
+#  student.getFunctionClass(student2)
+#  student2.getFunctionClass(student)
+
+# print(add(30,20))
+# print(subtract(30,20))
+# print(getuser())
+
+# childs = Child("sajib", "shepheard", "Father Name", "Mother Name")
+# childs.fatherFrom()   # Hay i am your father Father Name
+# childs.motherFrom()   # Hay i am your mother Mother Name
+# childs.whereFrom()   # 
+
+printter = Printer()
+printter.display(100)
+printter.display("Python")
+printter.display(10.5)
