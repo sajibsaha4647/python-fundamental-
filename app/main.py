@@ -5,7 +5,7 @@ from itertools import zip_longest
 from pathlib import Path
 import json
 import csv
-from modules import add, subtract, getuser,MehodStatic, Student, Child,Bkash, Printer, PaymentGetWay
+from modules import add, subtract, getuser,MehodStatic,ClassMethod, Student, Child,Bkash, Printer, PaymentGetWay,ClassMethod, OperatorOverloading
 
 # import copy
 # # int
@@ -886,4 +886,20 @@ if __name__ == "__main__":
 # bkash.newPayment(300)
 # bkash.anotherPay(30.78)
 
-print(MehodStatic.add(30,50))
+# print(MehodStatic.add(30,50))
+
+# print(ClassMethod.get_school())
+
+# Create instances
+num1 = OperatorOverloading(10)
+num2 = OperatorOverloading(3)
+
+result3 = num1 + num2
+print(result3.value)   # 13
+
+# 4. Add an object and a plain integer
+result4 = num1 + 5
+print(result4.value)   # 15
+print(f"{result4}")  # Output: OperatorOverloading(50)
+
+

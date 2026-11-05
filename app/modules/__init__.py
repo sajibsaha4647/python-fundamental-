@@ -43,3 +43,11 @@ from .class_interface import(
 from .class_static import (
     MehodStatic
 )
+
+from .class_class_method import(
+    ClassMethod
+)
+
+from .class_operator_overloading import(
+    OperatorOverloading
+)
