@@ -5,7 +5,8 @@ from itertools import zip_longest
 from pathlib import Path
 import json
 import csv
-from modules import add, subtract, getuser, Student, Child, Printer
+from modules import add, subtract, getuser,MehodStatic, Student, Child,Bkash, Printer, PaymentGetWay
+
 # import copy
 # # int
 # age: int = 30
@@ -873,7 +874,16 @@ if __name__ == "__main__":
 # childs.motherFrom()   # Hay i am your mother Mother Name
 # childs.whereFrom()   # 
 
-printter = Printer()
-printter.display(100)
-printter.display("Python")
-printter.display(10.5)
+# printter = Printer()
+# printter.display(100)
+# printter.display("Python")
+# printter.display(10.5)
+
+
+# bkash = Bkash()
+
+# bkash.pay(300)
+# bkash.newPayment(300)
+# bkash.anotherPay(30.78)
+
+print(MehodStatic.add(30,50))
