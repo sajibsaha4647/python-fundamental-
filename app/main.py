@@ -5,7 +5,7 @@ from itertools import zip_longest
 from pathlib import Path
 import json
 import csv
-from modules import add, subtract, getuser,MehodStatic,ClassMethod, Student, Child,Bkash, Printer, PaymentGetWay,ClassMethod, OperatorOverloading, FinalClass,Database
+from modules import add, subtract, getuser,MehodStatic,ClassMethod, Student, Child,Bkash, Printer, PaymentGetWay,ClassMethod, OperatorOverloading, FinalClass,Database,Engine,Car,Teacher ,Department
 
 # import copy
 # # int
@@ -909,11 +909,18 @@ if __name__ == "__main__":
 # print(f"{result4}")  # Output: OperatorOverloading(50)
 
 
-student1 = ClassMethod("Sajib", 30)
+# student1 = ClassMethod("Sajib", 30)
 
-student2 = ClassMethod.from_name("Rahim")
+# student2 = ClassMethod.from_name("Rahim")
 
-student3 = ClassMethod.from_dictionary({
-    "name": "Karim",
-    "age": 25
-})
+# student3 = ClassMethod.from_dictionary({
+#     "name": "Karim",
+#     "age": 25
+# })
+
+# car = Car()
+# car.start_car()
+
+teacher = Teacher("sajib saha")
+
+department = Department(teacher)

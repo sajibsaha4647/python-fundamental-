@@ -59,3 +59,19 @@ from .class_final import(
 from .class_context_manager_gc import (
     Database
 )
+
+from .class_composition import (
+    Engine
+)
+
+from .class_composition_two import (
+    Car
+)
+
+from .class_agregation import(
+    Teacher
+)
+
+from .class_agregation_two import(
+    Department
+)
