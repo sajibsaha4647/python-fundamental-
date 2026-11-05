@@ -5,7 +5,7 @@ from itertools import zip_longest
 from pathlib import Path
 import json
 import csv
-from modules import add, subtract, getuser,MehodStatic,ClassMethod, Student, Child,Bkash, Printer, PaymentGetWay,ClassMethod, OperatorOverloading, FinalClass,Database,Engine,Car,Teacher ,Department
+from modules import add, subtract, getuser,MehodStatic,ClassMethod, Student, Child,Bkash, Printer, PaymentGetWay,ClassMethod, OperatorOverloading, FinalClass,Database,Engine,Car,Teacher ,Department,D,UserData,Order
 
 # import copy
 # # int
@@ -921,6 +921,40 @@ if __name__ == "__main__":
 # car = Car()
 # car.start_car()
 
-teacher = Teacher("sajib saha")
+# teacher = Teacher("sajib saha")
 
-department = Department(teacher)
+# department = Department(teacher)
+
+# obj = D()
+
+# obj.show()
+
+# print(D.mro())
+
+dataclass = UserData(
+    name="sajib saha",
+    address="Cumilla",
+    age=30,
+    email="sajib@gmail.com",
+    salary=500000,
+    # json object
+    profile={"city": "Cumilla", "is_active": True},
+    # list
+    skills=["Python", "Go", "Flutter"],
+    # list of list
+    marks=[[80, 75], [90, 85]],
+    # list of object
+    orders=[
+        Order(id=1, product="Laptop", price=75000),
+        Order(id=2, product="Mobile", price=25000),
+    ],
+)
+print(dataclass)
+
+print(dataclass.profile["city"])
+print(dataclass.skills[0])
+print(dataclass.marks[1][0])
+print(dataclass.orders[0].product)
+
+for order in dataclass.orders:
+    print(order.product, order.price)

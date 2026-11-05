@@ -75,3 +75,12 @@ from .class_agregation import(
 from .class_agregation_two import(
     Department
 )
+
+from .class_mro import(
+    D
+)
+
+from .class_data_class import(
+    UserData,
+    Order
+)
