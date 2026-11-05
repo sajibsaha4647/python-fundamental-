@@ -51,3 +51,11 @@ from .class_class_method import(
 from .class_operator_overloading import(
     OperatorOverloading
 )
+
+from .class_final import(
+    FinalClass
+)
+
+from .class_context_manager_gc import (
+    Database
+)
